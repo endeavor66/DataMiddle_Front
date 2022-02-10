@@ -2,7 +2,7 @@
 def git_auth = "faaf8dd2-ff5c-4588-aca5-b0cd56df51de"
 //def git_auth = "endeavor"
 //git仓库地址
-def git_url = "git@github.com:endeavor66/dp_front.git"
+def git_url = "git@github.com:endeavor66/DataMiddle_Front.git"
 node {
   stage('拉取代码') {
     checkout([$class: 'GitSCM', branches: [[name: '*/master']],
