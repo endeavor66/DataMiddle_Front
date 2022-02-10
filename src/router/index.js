@@ -22,7 +22,7 @@ export default new Router({
     {
         path: '/index/console',
         name: 'Console',
-        component: () => import("@/pages/console.vue"),
+        component: () => import("@/pages/Console.vue"),
     },
     // {
     //     path: '/console',
