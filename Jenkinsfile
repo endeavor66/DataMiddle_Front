@@ -9,6 +9,15 @@ node {
     userRemoteConfigs: [[credentialsId: "${git_auth}", url:
     "${git_url}"]]])
   }
+  stage('代码审查') {
+    def scannerHome = tool 'sonarqube-scanner'
+    withSonarQubeEnv('sonarqube') { 
+      // 执行sonarqube
+      sh """
+          ${scannerHome}/bin/sonar-scanner
+      """ 
+    }
+  }
   stage('打包，部署网站') {
     //使用NodeJS的npm进行打包
     nodejs('nodejs12'){
